@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SA10MonitorDatabase.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Network">
+          <Key>
+            <PropertyRef Name="AssetID" />
+            <PropertyRef Name="DateTime" />
+          </Key>
+          <Property Name="AssetID" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="OnlineStatus" Type="bit" />
+          <Property Name="netSpeed" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="netQuality" Type="decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="Software">
+          <Key>
+            <PropertyRef Name="AssetID" />
+            <PropertyRef Name="DateTime" />
+          </Key>
+          <Property Name="AssetID" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="DFStatus" Type="bit" />
+          <Property Name="CMStatus" Type="bit" />
+          <Property Name="GKStatus" Type="bit" />
+          <Property Name="ServicesPipeStatus" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="SA10MonitorDatabaseStoreContainer">
+          <EntitySet Name="Network" EntityType="Self.Network" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Software" EntityType="Self.Software" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SA10MonitorDatabase" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Network">
+          <Key>
+            <PropertyRef Name="AssetID" />
+            <PropertyRef Name="DateTime" />
+          </Key>
+          <Property Name="AssetID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OnlineStatus" Type="Boolean" />
+          <Property Name="netSpeed" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="netQuality" Type="Decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="Software">
+          <Key>
+            <PropertyRef Name="AssetID" />
+            <PropertyRef Name="DateTime" />
+          </Key>
+          <Property Name="AssetID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DFStatus" Type="Boolean" />
+          <Property Name="CMStatus" Type="Boolean" />
+          <Property Name="GKStatus" Type="Boolean" />
+          <Property Name="ServicesPipeStatus" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="SA10_Monitor_DatabaseEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Networks" EntityType="Self.Network" />
+          <EntitySet Name="Softwares" EntityType="Self.Software" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SA10MonitorDatabaseStoreContainer" CdmEntityContainer="SA10_Monitor_DatabaseEntities3">
+          <EntitySetMapping Name="Networks">
+            <EntityTypeMapping TypeName="SA10MonitorDatabase.Network">
+              <MappingFragment StoreEntitySet="Network">
+                <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="OnlineStatus" ColumnName="OnlineStatus" />
+                <ScalarProperty Name="netSpeed" ColumnName="netSpeed" />
+                <ScalarProperty Name="netQuality" ColumnName="netQuality" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Softwares">
+            <EntityTypeMapping TypeName="SA10MonitorDatabase.Software">
+              <MappingFragment StoreEntitySet="Software">
+                <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="DFStatus" ColumnName="DFStatus" />
+                <ScalarProperty Name="CMStatus" ColumnName="CMStatus" />
+                <ScalarProperty Name="GKStatus" ColumnName="GKStatus" />
+                <ScalarProperty Name="ServicesPipeStatus" ColumnName="ServicesPipeStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

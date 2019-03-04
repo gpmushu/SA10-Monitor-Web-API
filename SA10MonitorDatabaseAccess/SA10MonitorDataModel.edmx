@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SA10MonitorDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AssetStatus">
+          <Key>
+            <PropertyRef Name="assetID" />
+            <PropertyRef Name="dateTime" />
+          </Key>
+          <Property Name="assetID" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="dateTime" Type="datetime" Nullable="false" />
+          <Property Name="onlineStatus" Type="bit" />
+          <Property Name="netSpeed" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="netQuality" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="dfStatus" Type="bit" />
+          <Property Name="cmStatus" Type="bit" />
+          <Property Name="gkStatus" Type="bit" />
+          <Property Name="regkeyStatus" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="SA10MonitorDatabaseModelStoreContainer">
+          <EntitySet Name="AssetStatus" EntityType="Self.AssetStatus" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SA10MonitorDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AssetStatus">
+          <Key>
+            <PropertyRef Name="assetID" />
+            <PropertyRef Name="dateTime" />
+          </Key>
+          <Property Name="assetID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="dateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="onlineStatus" Type="Boolean" />
+          <Property Name="netSpeed" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="netQuality" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="dfStatus" Type="Boolean" />
+          <Property Name="cmStatus" Type="Boolean" />
+          <Property Name="gkStatus" Type="Boolean" />
+          <Property Name="regkeyStatus" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="SA10_Monitor_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AssetStatus1" EntityType="SA10MonitorDatabaseModel.AssetStatus" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SA10MonitorDatabaseModelStoreContainer" CdmEntityContainer="SA10_Monitor_DatabaseEntities">
+          <EntitySetMapping Name="AssetStatus1">
+            <EntityTypeMapping TypeName="SA10MonitorDatabaseModel.AssetStatus">
+              <MappingFragment StoreEntitySet="AssetStatus">
+                <ScalarProperty Name="assetID" ColumnName="assetID" />
+                <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+                <ScalarProperty Name="onlineStatus" ColumnName="onlineStatus" />
+                <ScalarProperty Name="netSpeed" ColumnName="netSpeed" />
+                <ScalarProperty Name="netQuality" ColumnName="netQuality" />
+                <ScalarProperty Name="dfStatus" ColumnName="dfStatus" />
+                <ScalarProperty Name="cmStatus" ColumnName="cmStatus" />
+                <ScalarProperty Name="gkStatus" ColumnName="gkStatus" />
+                <ScalarProperty Name="regkeyStatus" ColumnName="regkeyStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

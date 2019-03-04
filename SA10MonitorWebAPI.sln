@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SA10MonitorWebAPI", "SA10MonitorWebAPI\SA10MonitorWebAPI.csproj", "{2A3D556D-BDDD-43BF-B82A-0CFFD4C37767}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SA10MonitorDatabaseAccess", "SA10MonitorDatabaseAccess\SA10MonitorDatabaseAccess.csproj", "{B522DE6E-471D-4DA6-A3AD-49AAFBBB4460}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A3D556D-BDDD-43BF-B82A-0CFFD4C37767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A3D556D-BDDD-43BF-B82A-0CFFD4C37767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A3D556D-BDDD-43BF-B82A-0CFFD4C37767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A3D556D-BDDD-43BF-B82A-0CFFD4C37767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B522DE6E-471D-4DA6-A3AD-49AAFBBB4460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B522DE6E-471D-4DA6-A3AD-49AAFBBB4460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B522DE6E-471D-4DA6-A3AD-49AAFBBB4460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B522DE6E-471D-4DA6-A3AD-49AAFBBB4460}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A03FC663-A38C-4BB5-BFFC-32EB760208A7}
+	EndGlobalSection
+EndGlobal
